@@ -1,0 +1,13 @@
+name: mcprotocol
+version: 0.1.0
+
+authors:
+  - Margret Riegert <margret@eowyn.net>
+
+crystal: ">= 1.15.1"
+
+license: MIT
+
+dependencies:
+  crygen:
+    github: tamdaz/crygen
