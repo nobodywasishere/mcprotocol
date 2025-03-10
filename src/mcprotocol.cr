@@ -11,7 +11,7 @@ module MCProtocol
       InitializeRequest, InitializeResult, InitializeRequestParams,
     },
     "ping" => {
-      PingRequest, Nil, Nil,
+      PingRequest, Nil, JSON::Any?,
     },
     "resources/list" => {
       ListResourcesRequest, ListResourcesResult, ListResourcesRequestParams,
@@ -45,6 +45,36 @@ module MCProtocol
     },
     "completion/complete" => {
       CompleteRequest, CompleteResult, CompleteRequestParams,
+    },
+    "notifications/cancelled" => {
+      CancelledNotification, Nil, CancelledNotificationParams,
+    },
+    "sampling/createMessage" => {
+      CreateMessageRequest, CreateMessageResult, CreateMessageRequestParams,
+    },
+    "notifications/initialized" => {
+      InitializedNotification, Nil, JSON::Any?,
+    },
+    "notifications/message" => {
+      LoggingMessageNotification, Nil, LoggingMessageNotificationParams,
+    },
+    "notifications/progress" => {
+      ProgressNotification, Nil, ProgressNotificationParams,
+    },
+    "notifications/prompts/list_changed" => {
+      PromptListChangedNotification, Nil, JSON::Any?,
+    },
+    "notifications/resources/list_changed" => {
+      ResourceListChangedNotification, Nil, JSON::Any?,
+    },
+    "notifications/resources/updated" => {
+      ResourceUpdatedNotification, Nil, ResourceUpdatedNotificationParams,
+    },
+    "notifications/roots/list_changed" => {
+      RootsListChangedNotification, Nil, JSON::Any?,
+    },
+    "notifications/tools/list_changed" => {
+      ToolListChangedNotification, Nil, JSON::Any?,
     },
   }
 
