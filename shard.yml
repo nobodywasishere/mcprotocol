@@ -10,4 +10,5 @@ license: MIT
 
 dependencies:
   crygen:
-    github: tamdaz/crygen
+    github: nobodywasishere/crygen
+    branch: nobody/fixes-and-alias
