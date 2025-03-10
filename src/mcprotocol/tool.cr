@@ -6,7 +6,7 @@ module MCProtocol
     getter required : Array(String)?
     getter type : String = "object"
 
-    def initialize(@type : String, @properties : JSON::Any? = Nil, @required : Array(String)? = Nil) : self
+    def initialize(@properties : JSON::Any? = Nil, @required : Array(String)? = Nil, @type : String = "object") : self
     end
   end
 

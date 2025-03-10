@@ -32,7 +32,7 @@ module MCProtocol
     getter method : String = "sampling/createMessage"
     getter params : CreateMessageRequestParams
 
-    def initialize(@method : String, @params : CreateMessageRequestParams) : self
+    def initialize(@params : CreateMessageRequestParams) : self
     end
   end
 end

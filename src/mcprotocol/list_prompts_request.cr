@@ -15,7 +15,7 @@ module MCProtocol
     getter method : String = "prompts/list"
     getter params : ListPromptsRequestParams?
 
-    def initialize(@method : String, @params : ListPromptsRequestParams? = Nil) : self
+    def initialize(@params : ListPromptsRequestParams? = Nil) : self
     end
   end
 end

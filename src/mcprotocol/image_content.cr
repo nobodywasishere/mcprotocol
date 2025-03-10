@@ -26,7 +26,7 @@ module MCProtocol
     getter mimeType : String
     getter type : String = "image"
 
-    def initialize(@data : String, @mimeType : String, @type : String, @annotations : ImageContentAnnotations? = Nil) : self
+    def initialize(@data : String, @mimeType : String, @annotations : ImageContentAnnotations? = Nil, @type : String = "image") : self
     end
   end
 end

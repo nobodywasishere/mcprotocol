@@ -19,7 +19,7 @@ module MCProtocol
     getter id : RequestId
     getter jsonrpc : String = "2.0"
 
-    def initialize(@error : JSONRPCErrorError, @id : RequestId, @jsonrpc : String) : self
+    def initialize(@error : JSONRPCErrorError, @id : RequestId, @jsonrpc : String = "2.0") : self
     end
   end
 end

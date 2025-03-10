@@ -14,7 +14,7 @@ module MCProtocol
     getter method : String = "notifications/resources/updated"
     getter params : ResourceUpdatedNotificationParams
 
-    def initialize(@method : String, @params : ResourceUpdatedNotificationParams) : self
+    def initialize(@params : ResourceUpdatedNotificationParams) : self
     end
   end
 end

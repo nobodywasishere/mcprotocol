@@ -26,7 +26,7 @@ module MCProtocol
     getter resource : TextResourceContents | BlobResourceContents
     getter type : String = "resource"
 
-    def initialize(@resource : TextResourceContents | BlobResourceContents, @type : String, @annotations : EmbeddedResourceAnnotations? = Nil) : self
+    def initialize(@resource : TextResourceContents | BlobResourceContents, @annotations : EmbeddedResourceAnnotations? = Nil, @type : String = "resource") : self
     end
   end
 end

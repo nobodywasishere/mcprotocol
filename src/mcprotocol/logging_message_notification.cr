@@ -18,7 +18,7 @@ module MCProtocol
     getter method : String = "notifications/message"
     getter params : LoggingMessageNotificationParams
 
-    def initialize(@method : String, @params : LoggingMessageNotificationParams) : self
+    def initialize(@params : LoggingMessageNotificationParams) : self
     end
   end
 end

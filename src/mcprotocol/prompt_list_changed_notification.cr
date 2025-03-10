@@ -5,7 +5,7 @@ module MCProtocol
     getter method : String = "notifications/prompts/list_changed"
     getter params : JSON::Any?
 
-    def initialize(@method : String, @params : JSON::Any? = Nil) : self
+    def initialize(@params : JSON::Any? = Nil) : self
     end
   end
 end

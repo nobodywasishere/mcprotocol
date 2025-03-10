@@ -27,7 +27,7 @@ module MCProtocol
     getter method : String = "completion/complete"
     getter params : CompleteRequestParams
 
-    def initialize(@method : String, @params : CompleteRequestParams) : self
+    def initialize(@params : CompleteRequestParams) : self
     end
   end
 end

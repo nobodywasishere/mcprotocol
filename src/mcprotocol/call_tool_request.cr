@@ -14,7 +14,7 @@ module MCProtocol
     getter method : String = "tools/call"
     getter params : CallToolRequestParams
 
-    def initialize(@method : String, @params : CallToolRequestParams) : self
+    def initialize(@params : CallToolRequestParams) : self
     end
   end
 end

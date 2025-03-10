@@ -14,7 +14,7 @@ module MCProtocol
     getter method : String = "resources/unsubscribe"
     getter params : UnsubscribeRequestParams
 
-    def initialize(@method : String, @params : UnsubscribeRequestParams) : self
+    def initialize(@params : UnsubscribeRequestParams) : self
     end
   end
 end

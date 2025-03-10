@@ -24,7 +24,7 @@ module MCProtocol
     getter text : String
     getter type : String = "text"
 
-    def initialize(@text : String, @type : String, @annotations : TextContentAnnotations? = Nil) : self
+    def initialize(@text : String, @annotations : TextContentAnnotations? = Nil, @type : String = "text") : self
     end
   end
 end

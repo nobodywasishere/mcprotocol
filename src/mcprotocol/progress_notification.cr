@@ -18,7 +18,7 @@ module MCProtocol
     getter method : String = "notifications/progress"
     getter params : ProgressNotificationParams
 
-    def initialize(@method : String, @params : ProgressNotificationParams) : self
+    def initialize(@params : ProgressNotificationParams) : self
     end
   end
 end

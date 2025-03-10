@@ -14,7 +14,7 @@ module MCProtocol
     getter method : String = "resources/subscribe"
     getter params : SubscribeRequestParams
 
-    def initialize(@method : String, @params : SubscribeRequestParams) : self
+    def initialize(@params : SubscribeRequestParams) : self
     end
   end
 end

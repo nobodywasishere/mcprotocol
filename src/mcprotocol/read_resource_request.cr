@@ -14,7 +14,7 @@ module MCProtocol
     getter method : String = "resources/read"
     getter params : ReadResourceRequestParams
 
-    def initialize(@method : String, @params : ReadResourceRequestParams) : self
+    def initialize(@params : ReadResourceRequestParams) : self
     end
   end
 end

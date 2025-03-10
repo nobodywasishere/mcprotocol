@@ -138,14 +138,15 @@ def initialize_method(klass, obj)
   required = obj["required"]?.try(&.as_a?).try(&.map(&.as_s?)) || %w[]
 
   klass.@properties.each do |prop|
-    next if !prop[:name].in?(required) && !prop[:value]?
+    next if !prop[:name].in?(required) || prop[:value]?
 
     prop_name = "@#{prop[:name]}"
     method.add_arg(prop_name, prop[:type] || "Nil")
   end
 
   klass.@properties.each do |prop|
-    next if prop[:name].in?(required) || prop[:value]?
+    next if prop[:name] == "method"
+    next if prop[:name].in?(required) && !prop[:value]?
 
     prop_name = "@#{prop[:name]}"
     method.add_arg(prop_name, prop[:type] || "Nil", prop[:value]? || "Nil")

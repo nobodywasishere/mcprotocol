@@ -15,7 +15,7 @@ module MCProtocol
     getter method : String = "resources/list"
     getter params : ListResourcesRequestParams?
 
-    def initialize(@method : String, @params : ListResourcesRequestParams? = Nil) : self
+    def initialize(@params : ListResourcesRequestParams? = Nil) : self
     end
   end
 end

@@ -16,7 +16,7 @@ module MCProtocol
     getter method : String = "initialize"
     getter params : InitializeRequestParams
 
-    def initialize(@method : String, @params : InitializeRequestParams) : self
+    def initialize(@params : InitializeRequestParams) : self
     end
   end
 end

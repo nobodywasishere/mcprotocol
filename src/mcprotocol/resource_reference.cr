@@ -6,7 +6,7 @@ module MCProtocol
     # The URI or URI template of the resource.
     getter uri : URI
 
-    def initialize(@type : String, @uri : URI) : self
+    def initialize(@uri : URI, @type : String = "ref/resource") : self
     end
   end
 end

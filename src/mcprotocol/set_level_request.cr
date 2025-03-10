@@ -14,7 +14,7 @@ module MCProtocol
     getter method : String = "logging/setLevel"
     getter params : SetLevelRequestParams
 
-    def initialize(@method : String, @params : SetLevelRequestParams) : self
+    def initialize(@params : SetLevelRequestParams) : self
     end
   end
 end

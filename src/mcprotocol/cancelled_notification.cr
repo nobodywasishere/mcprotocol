@@ -24,7 +24,7 @@ module MCProtocol
     getter method : String = "notifications/cancelled"
     getter params : CancelledNotificationParams
 
-    def initialize(@method : String, @params : CancelledNotificationParams) : self
+    def initialize(@params : CancelledNotificationParams) : self
     end
   end
 end
