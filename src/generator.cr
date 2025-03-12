@@ -54,7 +54,7 @@ def convert_obj(mcp, klass_name, param_name, obj)
 
       value = v["const"]?.try(&.as_s?).try { |i| "\"#{i}\"" }
       params.add_property(
-        :getter, # same as Crygen::Enums::PropVisibility::Getter,
+        CGE::PropVisibility::Getter,
         name: k,
         type: type,
         value: value,
