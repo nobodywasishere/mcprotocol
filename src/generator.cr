@@ -9,14 +9,14 @@ json = JSON.parse(File.read(schema))
 json.as_h["definitions"].as_h.each do |name, obj|
   obj = obj.as_h
 
-  mcp = Crygen::Types::Module.new("MCProtocol")
+  mcp = CGT::Module.new("MCProtocol")
 
   if obj["type"]? == "object"
     convert_obj(mcp, name, "", obj)
   else
     type = convert_format(mcp, name, "", obj)
 
-    alias_type = Crygen::Types::Alias.new(name, [type])
+    alias_type = CGT::Alias.new(name, [type])
 
     if docs = obj["description"]?.try(&.as_s)
       alias_type.add_comment(docs)
@@ -34,7 +34,7 @@ def convert_obj(mcp, klass_name, param_name, obj)
   obj_name = "#{klass_name}#{param_name.camelcase}"
 
   required = obj["required"]?.try(&.as_a?).try(&.map(&.as_s?)) || %w[]
-  params = Crygen::Types::Class.new(obj_name)
+  params = CGT::Class.new(obj_name)
   if docs = obj["description"]?.try(&.as_s)
     params.add_comment(docs)
   end
@@ -54,7 +54,7 @@ def convert_obj(mcp, klass_name, param_name, obj)
 
       value = v["const"]?.try(&.as_s?).try { |i| "\"#{i}\"" }
       params.add_property(
-        Crygen::Enums::PropVisibility::Getter,
+        CGE::PropVisibility::Getter,
         name: k,
         type: type,
         value: value,
@@ -70,7 +70,7 @@ def convert_obj(mcp, klass_name, param_name, obj)
   obj_name
 end
 
-def convert_format(mcp : Crygen::Types::Module, klass_name, obj_name, obj)
+def convert_format(mcp : CGT::Module, klass_name, obj_name, obj)
   if ref = obj["$ref"]?.try(&.as_s?)
     return ref.lchop("#/definitions/")
   end
@@ -82,7 +82,7 @@ def convert_format(mcp : Crygen::Types::Module, klass_name, obj_name, obj)
 
   if enum_obj = obj["enum"]?.try(&.as_a?).try(&.map(&.as_s))
     enum_name = "#{klass_name}#{obj_name.camelcase}"
-    enum_klass = Crygen::Types::Enum.new(enum_name)
+    enum_klass = CGT::Enum.new(enum_name)
 
     if docs = obj["description"]?.try(&.as_s)
       enum_klass.add_comment(docs)
@@ -134,7 +134,7 @@ def convert_format(mcp : Crygen::Types::Module, klass_name, obj_name, obj)
 end
 
 def initialize_method(klass, obj)
-  method = Crygen::Types::Method.new("initialize", "self")
+  method = CGT::Method.new("initialize", "self")
   required = obj["required"]?.try(&.as_a?).try(&.map(&.as_s?)) || %w[]
 
   klass.@properties.each do |prop|
