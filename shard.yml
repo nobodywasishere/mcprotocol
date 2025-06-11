@@ -11,4 +11,4 @@ license: MIT
 dependencies:
   crygen:
     github: tamdaz/crygen
-    branch: main
+    version: ~> 0.5.0
